@@ -2,8 +2,10 @@
 How to deploy war file from maven to tomcat
 
 Requirements:
+
     Maven
-    Tomcat server 9 ()
+    
+    Tomcat server 7/8/9, Here I am using Tomcat server 9
 
 Step 1: For Tomcat authentication used the existing users
 
@@ -32,7 +34,7 @@ Step 3: Add the tomcat plug-in code the application pom.xml file
             <artifactId>tomcat7-maven-plugin</artifactId>
             <version>2.2</version>
             <configuration>
-              <url>http://localhost:9090/manager/text</url>
+              <url>http://localhost:8080/manager/text</url>
               <server>TomcatServer</server>
               <path>/springmvc</path>
             </configuration>
@@ -47,9 +49,9 @@ mvn tomcat7:undeploy
 mvn tomcat7:redeploy
 
       [INFO] --- tomcat7-maven-plugin:2.2:deploy (default-cli) @ spring-mvc ---
-      [INFO] Deploying war to http://localhost:9090/springmvc
-      Uploading: http://localhost:9090/manager/text/deploy?path=%2Fspringmvc
-      Uploaded: http://localhost:9090/manager/text/deploy?path=%2Fspringmvc (4722 KB a
+      [INFO] Deploying war to http://localhost:8080/springmvc
+      Uploading: http://localhost:8080/manager/text/deploy?path=%2Fspringmvc
+      Uploaded: http://localhost:8080/manager/text/deploy?path=%2Fspringmvc (4722 KB a
       t 959.8 KB/sec)
 
       [INFO] tomcatManager status code:200, ReasonPhrase:
@@ -70,7 +72,7 @@ To deploy into tomcat server 6, we have to do a small correction the plugin code
             <artifactId>tomcat6-maven-plugin</artifactId>
             <version>2.2</version>
             <configuration>
-              <url>http://localhost:9090/manager</url>
+              <url>http://localhost:8080/manager</url>
               <server>TomcatServer</server>
               <path>/springmvc</path>
             </configuration>
