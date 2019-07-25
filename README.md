@@ -14,7 +14,7 @@ Step 1: For Tomcat authentication used the existing users
       <role rolename="manager-gui"/>
         <role rolename="manager-script"/>
         <user username="admin" password="password" roles="manager-gui,manager-script" />
-      </tomcat-users>
+      
 
 Step 2: Link the Tomcat user to Maven for authentication from Maven
 
@@ -25,7 +25,7 @@ Step 2: Link the Tomcat user to Maven for authentication from Maven
         <username>admin</username>
         <password>password</password>
       </server>
-      </servers>
+      
  
 Step 3: Add the tomcat plug-in code the application pom.xml file
 
@@ -37,10 +37,15 @@ Step 3: Add the tomcat plug-in code the application pom.xml file
               <url>http://localhost:8080/manager/text</url>
               <server>TomcatServer</server>
               <path>/springmvc</path>
+              <username>admin</username>
+        	  <password>password</password>
             </configuration>
          </plugin>
 
-Step 4: To deploy the war file directly into tomcat server use the below command
+Step 4: Start the Tomcat server, If you are doing it from commmand prompt use the below command
+goto -> %TOMCAT_BASE%/bin and then run
+        startup.bat
+Step 5: To deploy the war file directly into tomcat server use the below command
 
 mvn tomcat7:deploy 
 
