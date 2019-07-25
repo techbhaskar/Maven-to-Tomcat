@@ -45,6 +45,7 @@ Step 3: Add the tomcat plug-in code the application pom.xml file
 Step 4: Start the Tomcat server, If you are doing it from commmand prompt use the below command
 goto -> %TOMCAT_BASE%/bin and then run
         startup.bat
+      
 Step 5: To deploy the war file directly into tomcat server use the below command
 
 mvn tomcat7:deploy 
