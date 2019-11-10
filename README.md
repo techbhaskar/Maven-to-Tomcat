@@ -18,7 +18,7 @@ Step 1: For Tomcat authentication used the existing users
 
 Step 2: Link the Tomcat user to Maven for authentication from Maven
 
-%MAVEN_PATH%/conf/settings.xml
+%MAVEN_PATH%/conf/settings.xml :  Add inside <servers> tag
 
       <server>
         <id>TomcatServer</id>
