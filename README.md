@@ -9,7 +9,7 @@ Requirements:
 
 Step 1: For Tomcat authentication used the existing users
 
-%TOMCAT7_PATH%/conf/tomcat-users.xml
+%TOMCAT_PATH%/conf/tomcat-users.xml
 
       <role rolename="manager-gui"/>
         <role rolename="manager-script"/>
